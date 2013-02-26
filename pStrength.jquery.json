@@ -1,0 +1,34 @@
+{
+"name": "pStrength",
+"title": "jQuery Password Strength Checker",
+"description": "jQuery plugin for checking the strength of the passwords.",
+"keywords": [
+"password",
+"password strength",
+"password checker"
+],
+"version": "1.0.0",
+"author": {
+"name": "AccountsPassword.com",
+"url": "http://www.accountspassword.com/password-strength-jquery-plugin"
+},
+"maintainers": [
+{
+"name": "Mihai Matei",
+"email": "contact@erori.ro",
+"url": "http://www.accountspassword.com."
+}
+],
+"licenses": [
+{
+"type": "GPLv2"
+}
+],
+"bugs": "https://github.com/M1Sh0u/pStrength/issues",
+"homepage": "http://www.accountspassword.com/password-strength-jquery-plugin",
+"docs": "http://www.accountspassword.com/password-strength-jquery-plugin",
+"download": "http://www.accountspassword.com/password-strength-jquery-plugin",
+"dependencies": {
+"jquery": ">=1.5"
+}
+}
