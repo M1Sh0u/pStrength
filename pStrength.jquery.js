@@ -26,7 +26,7 @@
 									['#ccffcc', '#FFF'], ['#66cc66', '#FFF'], ['#339933', '#FFF'], ['#006600', '#FFF'], ['#105610', '#FFF']],
 				'passwordValidFrom': 60, // 60%
 				'onValidatePassword': function(percentage) { },
-				'onPasswordStrengthChanged' : function(passwordStrength) { }
+				'onPasswordStrengthChanged' : function(passwordStrength, percentage) { }
 			}, options);
 					 
 			for(var i = 48; i < 58; i++)
@@ -60,18 +60,22 @@
 		},
 	 
 		onPasswordStrengthChanged: function(passwordStrength, settings) {
-			settings.onPasswordStrengthChanged(passwordStrength);
+			var percentage;
+			percentage = Math.ceil(passwordStrength * 100 / 12);
 			
-			methods.onValidatePassword(passwordStrength, settings);
+			if(percentage > 100)
+				percentage = 100;
+				
+			settings.onPasswordStrengthChanged(passwordStrength, percentage);
+			
+			methods.onValidatePassword(passwordStrength, percentage, settings);
 			
 			if(settings.changeBackground) {
 				methods.changeBackground(passwordStrength, settings.backgrounds);
 			}
 		},
 		
-		onValidatePassword: function(passwordStrength, settings) {
-			var percentage = Math.ceil(passwordStrength * 100 / 12);
-			
+		onValidatePassword: function(passwordStrength, percentage, settings) {
 			if(percentage >= settings.passwordValidFrom) {
 				settings.onValidatePassword(percentage);	
 			}
