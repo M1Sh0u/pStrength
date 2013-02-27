@@ -1,5 +1,5 @@
 /*!
- * pStrength jQuery Plugin v1.0.0
+ * pStrength jQuery Plugin v1.0.3
  * http://accountspassword.com/pstrength-jquery-plugin
  *
  * Created by AccountsPassword.com
@@ -20,6 +20,7 @@
 		init : function( options, callbacks) {
 		
 			var settings = $.extend({
+				'bind': 'keyup change',
 				'changeBackground': true,
 				'backgrounds'     : [['#cc0000', '#FFF'], ['#cc3333', '#FFF'], ['#cc6666', '#FFF'], ['#ff9999', '#FFF'],
 									['#e0941c', '#FFF'], ['#e8a53a', '#FFF'], ['#eab259', '#FFF'], ['#efd09e', '#FFF'],
@@ -52,7 +53,7 @@
 				 
 				methods.calculatePasswordStrength(text, settings);
 						 
-				$pStrengthElement.keyup(function(){
+				$pStrengthElement.bind(settings.bind, function(){
 					methods.calculatePasswordStrength($(this).val(), settings);
 				});
 			 
