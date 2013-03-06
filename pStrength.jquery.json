@@ -8,7 +8,7 @@
 "password-checker",
 "password-verifier"
 ],
-"version": "1.0.3",
+"version": "1.0.4",
 "author": {
 "name": "AccountsPassword.com",
 "url": "http://www.accountspassword.com/password-strength-jquery-plugin"
