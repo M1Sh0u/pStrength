@@ -29,22 +29,60 @@ $('#myElement').pStrength({
 ```
 $(document).ready(function(){
     
-      $('#myForm').submit(function(){
-            return false;
-        });
-    	
-        $('#myElement').pStrength({
-            'changeBackground'          : true,
-            'onPasswordStrengthChanged' : function(passwordStrength, percentage) {
-                $('#myElement').next('div').html('Your password strength is ' + percentage + '%');
-            },
-            'onValidatePassword': function(percentage) {
-                $('#myElement').next('div').html($('#myElement').next('div').html() + ' Great, now you can continue to register!');
-            	
-                $('#myForm').submit(function(){
-                    return true;
-                });
-            }
-        });
+	$('#myForm').submit(function(){
+		return false;
+	});
+	
+	$('#myElement1, #myElement2').pStrength({
+		'changeBackground'          : false,
+		'onPasswordStrengthChanged' : function(passwordStrength, strengthPercentage) {
+			if ($(this).val()) {
+				$.fn.pStrength('changeBackground', $(this), passwordStrength);
+			} else {
+				$.fn.pStrength('resetStyle', $(this));
+			}
+			$('#' + $(this).data('display')).html('Your password strength is ' + strengthPercentage + '%');
+		},
+		'onValidatePassword': function(strengthPercentage) {
+			$('#' + $(this).data('display')).html(
+				$('#' + $(this).data('display')).html() + ' Great, now you can continue to register!'
+			);
+			
+			$('#myForm').submit(function(){
+				return true;
+			});
+		}
+	});
 });
+```
+##HTML code for the example above##
+```
+<form id="myForm">
+	<input type="password" id="myElement1" size="40" class="left" data-display="myDisplayElement1" /> <div class="left" id="myDisplayElement1"></div>
+	<div class="clear"></div>
+	<input type="password" id="myElement2" size="40" class="left" data-display="myDisplayElement2" /> <div class="left" id="myDisplayElement2"></div>
+</form>
+```
+##CSS code for the example above##
+```
+#myElement1, #myElement2 {
+	padding:4px;
+	margin:2px;
+	border:solid 1px #999;
+}
+
+#myElement2 {
+	background-color:#036;
+}
+
+div {
+	margin-left:20px;
+	margin-top:6px;
+}
+.left {
+	float:left;
+}
+.clear {
+	clear:both;
+}
 ```

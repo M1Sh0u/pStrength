@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pStrength jQuery Plugin Demo</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="pStrength.jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+    
+            $('#myForm').submit(function(){
+                return false;
+            });
+            
+            $('#myElement1, #myElement2').pStrength({
+                'changeBackground'          : false,
+                'onPasswordStrengthChanged' : function(passwordStrength, strengthPercentage) {
+                    if ($(this).val()) {
+                        $.fn.pStrength('changeBackground', this, passwordStrength);
+                    } else {
+                        $.fn.pStrength('resetStyle', this);
+                    }
+                    $('#' + $(this).data('display')).html('Your password strength is ' + strengthPercentage + '%');
+                },
+                'onValidatePassword': function(strengthPercentage) {
+                    $('#' + $(this).data('display')).html(
+                        $('#' + $(this).data('display')).html() + ' Great, now you can continue to register!'
+                    );
+                    
+                    $('#myForm').submit(function(){
+                        return true;
+                    });
+                }
+            });
+        });
+    </script>
+    <style>
+        #myElement1, #myElement2 {
+            padding:4px;
+            margin:2px;
+            border:solid 1px #999;
+        }
+        
+        #myElement2 {
+            background-color:#036;
+        }
+        
+        div {
+            margin-left:20px;
+            margin-top:6px;
+        }
+        .left {
+            float:left;
+        }
+        .clear {
+            clear:both;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>pStrength jQuery Plugin Demo</h1>
+    <form id="myForm">
+        <input type="password" id="myElement1" size="40" class="left" data-display="myDisplayElement1" /> <div class="left" id="myDisplayElement1"></div>
+        <div class="clear"></div>
+        <input type="password" id="myElement2" size="40" class="left" data-display="myDisplayElement2" /> <div class="left" id="myDisplayElement2"></div>
+    </form>
+</body>
+</html>
