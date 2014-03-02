@@ -1,5 +1,5 @@
 /*!
- * pStrength jQuery Plugin v1.0.5
+ * pStrength jQuery Plugin v1.0.6
  * http://accountspassword.com/pstrength-jquery-plugin
  *
  * Created by AccountsPassword.com
