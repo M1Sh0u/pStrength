@@ -105,7 +105,7 @@
             upper_letters_found = 0,
             lower_letters_found = 0,
             special_chars_found = 0,
-            text = $(this).val();
+            text = $(this).val().trim();
                         
         passwordStrength += 2 * Math.floor(text.length / 8);
         

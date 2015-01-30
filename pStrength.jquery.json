@@ -8,7 +8,7 @@
 "password-checker",
 "password-verifier"
 ],
-"version": "1.0.6",
+"version": "1.0.7",
 "author": {
 "name": "AccountsPassword.com",
 "url": "http://www.accountspassword.com/password-strength-jquery-plugin"
@@ -22,8 +22,8 @@
 ],
 "licenses": [
 {
-"type": "GPL",
-"url":"http://www.gnu.org/licenses/gpl.html"
+"type": "MIT",
+"url":"http://opensource.org/licenses/MIT"
 }
 ],
 "bugs": "https://github.com/M1Sh0u/pStrength/issues",
