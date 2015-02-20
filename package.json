@@ -1,0 +1,25 @@
+{
+  "name": "pstrength",
+  "version": "1.0.8",
+  "description": "jQuery plugin for checking passwords strength",
+  "main": "pStrength.jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/M1Sh0u/pStrength.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "password-strength",
+    "check-password"
+  ],
+  "author": "Mihai MATEI <mihai.matei@outlook.com> (https://www.accountspassword.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M1Sh0u/pStrength/issues"
+  },
+  "homepage": "https://accountspassword.com/password-strength-jquery-plugin"
+}
