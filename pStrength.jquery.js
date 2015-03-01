@@ -3,7 +3,7 @@
  * http://accountspassword.com/pstrength-jquery-plugin
  *
  * Created by AccountsPassword.com
- * Released under the GPL General Public License (Feel free to copy, modify or redistribute this plugin.)
+ * Released under the MIT License (Feel free to copy, modify or redistribute this plugin.)
  *
  */
  
