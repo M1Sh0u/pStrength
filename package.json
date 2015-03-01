@@ -1,6 +1,6 @@
 {
   "name": "pstrength",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "jQuery plugin for checking passwords strength",
   "main": "pStrength.jquery.js",
   "scripts": {
