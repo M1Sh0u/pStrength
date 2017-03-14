@@ -59,8 +59,6 @@
                     });
                     
                 }, this));
-                
-                return this;
             },
             
             changeBackground: function(pStrengthElement, passwordStrength) {
