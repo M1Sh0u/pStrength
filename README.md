@@ -2,9 +2,9 @@ pStrength
 =========
 We have developed a jQuery plugin which can help you adding a password strength feature to your own accounts forms.
 
-##Plugin defaults##
+### Plugin defaults
 
-```
+```js
 $('#myElement').pStrength({
     'bind': 'keyup change',
     'changeBackground': true,
@@ -24,9 +24,9 @@ $('#myElement').pStrength({
 5. **onValidatePassword** - Define a function which will be called each time the password becomes valid;
 6. **onPasswordStrengthChanged** - Define a function which will be called each time the password strength is recalculated. You can use passwordStrength and percentage arguments for designing your own password meter
 
-##How to use pStrength plugin##
+### How to use pStrength plugin
 
-```
+```js
 $(document).ready(function(){
     
     $('#myForm').submit(function(){
@@ -56,16 +56,16 @@ $(document).ready(function(){
     });
 });
 ```
-##HTML code for the example above##
-```
+### HTML code for the example above
+```html
 <form id="myForm">
     <input type="password" id="myElement1" size="40" class="left" data-display="myDisplayElement1" /> <div class="left" id="myDisplayElement1"></div>
     <div class="clear"></div>
     <input type="password" id="myElement2" size="40" class="left" data-display="myDisplayElement2" /> <div class="left" id="myDisplayElement2"></div>
 </form>
 ```
-##CSS code for the example above##
-```
+### CSS code for the example above
+```css
 #myElement1, #myElement2 {
     padding:4px;
     margin:2px;
