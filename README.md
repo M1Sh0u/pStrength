@@ -2,8 +2,6 @@ pStrength
 =========
 We have developed a jQuery plugin which can help you adding a password strength feature to your own accounts forms.
 
-Visit the pStrength official page for an working demo @ https://accountspassword.com/password-strength-jquery-plugin
-
 ##Plugin defaults##
 
 ```
